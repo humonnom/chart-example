@@ -6,6 +6,8 @@ import EditMenu from "../../components/DropdownEditMenu";
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
+import BarChart01 from "../../charts/BarChart01.jsx";
+import BubbleChart from "../../charts/BubbleChart.jsx";
 
 function DashboardCard01() {
   const chartData = {
@@ -90,6 +92,84 @@ function DashboardCard01() {
     ],
   };
 
+  const chartData2 = {
+    labels: [
+      "12-01-2022",
+      "01-01-2023",
+      "02-01-2023",
+      "03-01-2023",
+      "04-01-2023",
+      "05-01-2023",
+    ],
+    datasets: [
+      // Light blue bars
+      {
+        label: "Direct",
+        data: [800, 1600, 900, 1300, 1950, 1700],
+        backgroundColor: tailwindConfig().theme.colors.sky[500],
+        hoverBackgroundColor: tailwindConfig().theme.colors.sky[600],
+        barPercentage: 0.7,
+        categoryPercentage: 0.7,
+        borderRadius: 4,
+      },
+      // Blue bars
+      {
+        label: "Indirect",
+        data: [4900, 2600, 5350, 4800, 5200, 4800],
+        backgroundColor: tailwindConfig().theme.colors.violet[500],
+        hoverBackgroundColor: tailwindConfig().theme.colors.violet[600],
+        barPercentage: 0.7,
+        categoryPercentage: 0.7,
+        borderRadius: 4,
+      },
+    ],
+  };
+
+  const bubbleChartData = {
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    mainData: [
+      { x: 0, y: 20, r: 10 },
+      { x: 1, y: 30, r: 15 },
+      { x: 2, y: 25, r: 12 },
+      { x: 3, y: 40, r: 20 },
+      { x: 4, y: 35, r: 18 },
+      { x: 5, y: 50, r: 25 },
+      { x: 6, y: 45, r: 22 },
+      { x: 7, y: 55, r: 28 },
+      { x: 8, y: 60, r: 30 },
+      { x: 9, y: 70, r: 35 },
+      { x: 10, y: 65, r: 32 },
+      { x: 11, y: 80, r: 40 },
+    ],
+    subData: [
+      { x: 0, y: 15, r: 8 },
+      { x: 1, y: 25, r: 12 },
+      { x: 2, y: 20, r: 10 },
+      { x: 3, y: 35, r: 18 },
+      { x: 4, y: 30, r: 15 },
+      { x: 5, y: 45, r: 22 },
+      { x: 6, y: 40, r: 20 },
+      { x: 7, y: 50, r: 25 },
+      { x: 8, y: 55, r: 28 },
+      { x: 9, y: 65, r: 32 },
+      { x: 10, y: 60, r: 30 },
+      { x: 11, y: 75, r: 38 },
+    ],
+  };
+
   return (
     <div className="">
       {/*<div className="px-5 pt-5">*/}
@@ -123,7 +203,14 @@ function DashboardCard01() {
       {/* Chart built with Chart.js 3 */}
       {/*<div className="grow max-sm:max-h-[128px] xl:max-h-[128px]">*/}
       {/* Change the height attribute to adjust the chart height */}
-      <LineChart data={chartData} width={389} height={128} />
+      <div>
+        <LineChart data={chartData} width={389} height={128} />
+      </div>
+      <div>
+        <BarChart01 data={chartData2} width={389} height={128} />
+      </div>
+      {/*<div>*/}
+      {/*  <BubbleChart {...bubbleChartData} width={800} height={400} />*/}
       {/*</div>*/}
     </div>
   );

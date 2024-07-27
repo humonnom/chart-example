@@ -5,8 +5,6 @@ import "./css/style.css";
 
 import "./charts/ChartjsConfig";
 
-// Import pages
-import Dashboard from "./pages/Dashboard";
 import DashboardCard01 from "./partials/dashboard/DashboardCard01.jsx";
 
 function App() {
