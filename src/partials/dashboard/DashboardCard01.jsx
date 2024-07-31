@@ -8,6 +8,7 @@ import EditMenu from "../../components/DropdownEditMenu";
 import { tailwindConfig, hexToRGB } from "../../utils/Utils";
 import BarChart01 from "../../charts/BarChart01.jsx";
 import BubbleChart from "../../charts/BubbleChart.jsx";
+import DashboardCard06 from "./DashboardCard06.jsx";
 
 function DashboardCard01() {
   const chartData = {
@@ -212,6 +213,9 @@ function DashboardCard01() {
       {/*<div>*/}
       {/*  <BubbleChart {...bubbleChartData} width={800} height={400} />*/}
       {/*</div>*/}
+      <div>
+        <DashboardCard06 />
+      </div>
     </div>
   );
 }
